@@ -1,0 +1,24 @@
+.image-carousel img{
+    position: absolute;
+    top: 0;
+    opacity: 100;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+
+    transition: opacity 1.1s;
+}
+
+.image-carousel{
+    position: relative;
+    width: 100%;
+    height: 300px;
+
+    /* overflow: hidden; */
+}
+
+
+.image-carousel img.hidden{
+    opacity: 0;
+    /* display: none; */
+}
