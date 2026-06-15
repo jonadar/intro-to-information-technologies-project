@@ -234,15 +234,48 @@ button a {
     padding-top: 15px;
 }
 
+
+
+/* ==================================================
+                        contact form
+=====================================================*/
+
 .contact-body-wrapper h1 {
-    padding-bottom: 15px;
-    padding-top: 15px;
+    padding: 15px;
 }
 
 
-.contact-body-wrapper {
-    background: rgb(239, 239, 239);
+.contact-body-wrapper form{
+    background: white;
+    width: 50%;
+    min-width: 300px;
     padding: 20px;
+    margin: 20px;
+    box-shadow: 0px 0px 10px 3px #0000002e;
+
+
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-body-wrapper input, .contact-body-wrapper textarea{
+    /* background: rgb(255, 255, 255); */
+    border-radius: 4px;
+    padding: 8px;
+    width: 60%;
+    margin: 10px 0;
+    resize: none;
+    border: 1px solid black;
+}
+
+.contact-body-wrapper form button{
+    border: none;
+    background-color: rgb(22, 142, 255);
+    border-radius: 5px;
+    color: white;
+}
+.contact-body-wrapper form button:hover{
+    background-color: rgb(0, 97, 187);
 }
 
 .button {
