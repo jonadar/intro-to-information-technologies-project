@@ -19,16 +19,16 @@ const navPage = `
 
     <ul>
         <li><a href="Homepage.html">עמוד הבית</a></li>
-        <li><a href="#">לתכנן</a></li>
-        <li><a href="#">להזמין</a></li>
-        <li><a href="#">לטיסה</a></li>
+        <li><a href="Flights.html">טיסות</a></li>
+        <li><a href="Clothes.html">בגדים</a></li>
+        <li><a href="#">אטרקציות</a></li>
         <li><a href="ContactUs.html">צור קשר</a></li>
         <li><a href="#">חיפוש &#8981;</a></li>
     </ul>
 
-    <div class="nav-buttons">
-        <button><a href="Login.html">התחברות</a></button>
-        <button><a href="Signup.html">הרשמה</a></button>
+    <div class="nav-login">
+        <a href="Login.html">התחברות</a>
+        <a href="Signup.html">הרשמה</a>
     </div>
 </nav>
 `;
