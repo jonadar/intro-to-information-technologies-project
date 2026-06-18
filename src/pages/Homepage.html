@@ -1,18 +1,19 @@
 <!doctype html>
 <html dir="rtl">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="../styles/Style.css" />
-        <script src="../javascript/templateLoad.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>עמוד הבית</title>
-    </head>
 
-    <body>
-        <div class="main-wrapper">
-            <h1 style="text-align: center">מה היעד הבא שלך?</h1>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../styles/Style.css" />
+    <script src="../javascript/templateLoad.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>עמוד הבית</title>
+</head>
 
-            <div class="map-iframe">
+<body>
+    <div class="main-wrapper">
+        <h1 style="text-align: center">מה היעד הבא שלך?</h1>
+
+        <!-- <div class="map-iframe">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108169.74968893745!2d34.87964839171833!3d32.088050276946866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4ca6193b7c1f%3A0xc1fb72a2c0963f90!2z16rXnCDXkNeR15nXkS3Xmdek15U!5e0!3m2!1siw!2sil!4v1781368631370!5m2!1siw!2sil"
                     width="600"
@@ -22,45 +23,62 @@
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
                 ></iframe>
+                
             </div>
 
-            <div>
-                <h1>המלצות הבגדים הכי חמים</h1>
-                <div class="image-carousel">
-                    <img
-                        src="https://cdn.kimkim.com/files/a/content_articles/featured_photos/042ce9a6a679fc8d26c801c1d92a539485115cd8/big-1cb555d739644481abb849be538637be.jpg"
-                        alt=""
-                    />
-                    <img
-                        src="https://imageio.forbes.com/specials-images/imageserve//62bdd4a21a6dc599d18bca9b/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds"
-                        alt=""
-                    />
-                    <img
-                        src="https://static.mycity.travel/manage/uploads/6/33/598235/1/av-ski-header_2000.jpg"
-                        alt=""
-                    />
+            <iframe src="https://zoom.earth/maps/precipitation/#view=32.35,36.22,5z/model=icon" frameborder="0"></iframe> -->
+        <!-- 
+            <iframe 
+                src="https://www.meteoblue.com/en/weather/maps/widget?windAnimation=1&temperature=1&level=surface&overlay=wind&zoom=4&lat=32.1&lon=34.8" 
+                frameborder="0" 
+                scrolling="no" 
+                width="800" 
+                height="600" 
+                allowfullscreen>
+            </iframe> -->
+        <img class="map" src="../assets/map.png" alt="">
+
+        <div class="base-container">
+            <div class="search-component" style="padding: 0 !important;">
+                <div class="text" style="text-align: center; width: 100%;">
+                    <h1>קבלו הצעות מותאמות אישית!</h1>
+                    <p>מצאו חופשות\בגדים\אטרקציות רק אצלנו! במחיר משתלם ואיך שאתם אוהבים. <a href="" style="color: white;">לפרטים לחצו פה</a></p>
                 </div>
             </div>
 
-            <div>
-                <h1>תכנון חופשה לפי אטרקציה?</h1>
-                <div class="image-carousel">
-                    <img
-                        src="https://imageio.forbes.com/specials-images/imageserve//62bdd4a21a6dc599d18bca9b/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds"
-                        alt=""
-                    />
-                    <img
-                        src="https://static.mycity.travel/manage/uploads/6/33/598235/1/av-ski-header_2000.jpg"
-                        alt=""
-                    />
-                    <img
-                        src="https://cdn.kimkim.com/files/a/content_articles/featured_photos/042ce9a6a679fc8d26c801c1d92a539485115cd8/big-1cb555d739644481abb849be538637be.jpg"
-                        alt=""
-                    />
-                </div>
+            <div id="content-list">
+
+            </div>
+        </div>
+        <div>
+            <h1>המלצות הבגדים הכי חמים</h1>
+            <div class="image-carousel">
+                <img
+                    src="https://c1.peakpx.com/wallpaper/573/909/315/store-clothes-clothing-line-fashion-wallpaper.jpg" />
+                <img
+                    src="https://static.vecteezy.com/system/resources/thumbnails/035/384/028/small_2x/ai-generated-large-selection-of-coats-are-hung-on-a-rail-outside-free-photo.jpg" />
+                <img
+                    src="https://static.vecteezy.com/system/resources/thumbnails/031/126/929/small_2x/hoodies-of-different-colors-hang-on-a-hanger-ai-generated-photo.jpg" />
             </div>
         </div>
 
-        <script src="../javascript/imageCarousel.js"></script>
-    </body>
+        <div>
+            <h1>תכנון חופשה לפי אטרקציה?</h1>
+            <div class="image-carousel">
+                <img
+                    src="https://imageio.forbes.com/specials-images/imageserve//62bdd4a21a6dc599d18bca9b/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds" />
+                <img src="https://static.mycity.travel/manage/uploads/6/33/598235/1/av-ski-header_2000.jpg" />
+                <img
+                    src="https://cdn.kimkim.com/files/a/content_articles/featured_photos/042ce9a6a679fc8d26c801c1d92a539485115cd8/big-1cb555d739644481abb849be538637be.jpg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbot-container">
+
+    </div>
+
+    <script src="../javascript/imageCarousel.js"></script>
+</body>
+
 </html>

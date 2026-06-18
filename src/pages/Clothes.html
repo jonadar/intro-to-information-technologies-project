@@ -25,11 +25,22 @@
                 </div>
             </div>
 
-            <div class="rounded-container">
+            <div class="rounded-container filter-conatiner">
                 <h2>סינון</h2>
                 <div>
-                    <input type="number" name="" id="">
-                    <input type="number" name="" id="">
+                    <label for="">טמפרטורה</label>
+                    <input type="number" placeholder="-40°">-<input type="number" placeholder="40°">
+                </div>
+                <div>
+                    <label for="">תקציב</label>
+                    <input type="number" placeholder="0$">-<input type="number" placeholder="3,000$">
+                </div>
+                <div>
+                    <label for="">מזג אוויר</label>
+                    <button class="toggleable selected" onclick="toggleButtonClicked(this)">הכל</button>
+                    <button class="toggleable" onclick="toggleButtonClicked(this)">גשום</button>
+                    <button class="toggleable" onclick="toggleButtonClicked(this)">שמשי</button>
+                    <button class="toggleable" onclick="toggleButtonClicked(this)">מעונן</button>
                 </div>
             </div>
 
@@ -93,8 +104,9 @@
                 tagsContainer.append(span);
             });
 
-            const button = document.createElement("button");
+            const button = document.createElement("a");
             button.innerText = "עוד פרטים";
+            button.href = "#";
 
             div.append(imageContainer);
             div.append(tagsContainer);
