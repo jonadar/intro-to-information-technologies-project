@@ -21,9 +21,8 @@ const navPage = `
         <li><a href="Homepage.html">עמוד הבית</a></li>
         <li><a href="Flights.html">טיסות</a></li>
         <li><a href="Clothes.html">בגדים</a></li>
-        <li><a href="#">אטרקציות</a></li>
+        <li><a href="Attractions.html">אטרקציות</a></li>
         <li><a href="ContactUs.html">צור קשר</a></li>
-        <li><a href="#">חיפוש &#8981;</a></li>
     </ul>
 
     <div class="nav-login">

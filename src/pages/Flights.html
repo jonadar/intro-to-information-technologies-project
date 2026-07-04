@@ -1,125 +1,158 @@
 <!doctype html>
 <html dir="rtl">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="../styles/Style.css" />
-        <script src="../javascript/templateLoad.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Cielo</title>
-    </head>
 
-    <body>
-        <div class="base-container">
-            <h1>טיסות</h1>
-            <div class="search-component">
-                <div class="text">
-                    <h1>חיפוש חכם</h1>
-                    <p>חפשו לפי מיקום\איזור\מזג אוויר והחיפוש החכם יעשה את השאר!</p>
-                </div>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../styles/Style.css" />
+    <script src="../javascript/templateLoad.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cielo</title>
+</head>
 
-                <div class="rounded-container search-box">
-                    <h2>חפש עכשיו!</h2>
-                    <input type="text" placeholder="מיקום\איזור\מזג אוויר">
-                    <br>
-                    <button>חפש</button>
-                </div>
+<body>
+    <div class="base-container">
+        <h1>טיסות</h1>
+        <div class="search-component">
+            <div class="text">
+                <h1>חיפוש חכם</h1>
+                <p>חפשו לפי יעד, אזור או מזג אוויר ו-Cielo תציג לכם אפשרויות שמתאימות בדיוק לחופשה שאתם מחפשים.</p>
             </div>
 
-            <div class="rounded-container filter-conatiner">
-                <h2>סינון</h2>
-                <div>
-                    <label for="">טמפרטורה</label>
-                    <input type="number" placeholder="-40°">-<input type="number" placeholder="40°">
-                </div>
-                <div>
-                    <label for="">תקציב</label>
-                    <input type="number" placeholder="0$">-<input type="number" placeholder="3,000$">
-                </div>
-                <div>
-                    <label for="">מזג אוויר</label>
-                    <button class="toggleable selected" onclick="toggleButtonClicked(this)">הכל</button>
-                    <button class="toggleable" onclick="toggleButtonClicked(this)">גשום</button>
-                    <button class="toggleable" onclick="toggleButtonClicked(this)">שמשי</button>
-                    <button class="toggleable" onclick="toggleButtonClicked(this)">מעונן</button>
-                </div>
-            </div>
-
-            <div id="content-list">
-                
+            <div class="rounded-container search-box">
+                <h2>לאן טסים?</h2>
+                <input type="text" placeholder="למשל: פריז, אירופה, שמשי" />
+                <button>חפש</button>
             </div>
         </div>
-    </body>
 
-    <script>
-        const content = [
-            {
-                title: "41",
-                description: "fasfksal kfskflaksfk askflasfk a",
-                image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=900&q=80",
-                tags: ["A", "B"]
-            },
-            {
-                title: "41",
-                description: "fasfksal kfskflaksfk askflasfk a",
-                image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=900&q=80",
-                tags: ["A", "B"]
-            },
-            {
-                title: "41",
-                description: "fasfksal kfskflaksfk askflasfk a",
-                image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=900&q=80",
-                tags: ["A", "B"]
-            },
-            {
-                title: "paris",
-                description: "eifel tower tours, with lots of baguets",
-                image: "https://tse1.mm.bing.net/th/id/OIP.WuC8RmUxa3O7XDq5tEYSEwHaF7?rs=1&pid=ImgDetMain&o=7&rm=3",
-                tags: ["👽", "🗼"]
-            }
-        ];
+        <div class="rounded-container filter-conatiner">
+            <h2>סינון</h2>
+            <div>
+                <label for="">טמפרטורה</label>
+                <input type="number" placeholder="-40°">-<input type="number" placeholder="40°">
+            </div>
+            <div>
+                <label for="">תקציב</label>
+                <input type="number" placeholder="0$">-<input type="number" placeholder="3,000$">
+            </div>
+            <div>
+                <label for="">מזג אוויר</label>
+                <button class="toggleable selected" onclick="toggleButtonClicked(this)">הכל</button>
+                <button class="toggleable" onclick="toggleButtonClicked(this)">גשום</button>
+                <button class="toggleable" onclick="toggleButtonClicked(this)">שמשי</button>
+                <button class="toggleable" onclick="toggleButtonClicked(this)">מעונן</button>
+            </div>
+        </div>
 
-        const contianer = document.getElementById("content-list");
+        <div id="content-list">
 
-        content.forEach(item => {
-            const { title, description, image, tags } = item;
+        </div>
+    </div>
+</body>
 
-            const div = document.createElement("div");
-
-            const h2 = document.createElement("h2");
-            h2.innerText = title;
-
-            const imageContainer = document.createElement("div");
-            const img = document.createElement("img");
-            img.src = image;
-            imageContainer.append(img);
-            imageContainer.classList.add("image-container");
-
-            const desc = document.createElement("p");
-            desc.innerText = description;
-
-            const tagsContainer = document.createElement("div");
-            tags.forEach(tag => {
-                const span = document.createElement("span");
-                span.innerText = tag;
-                tagsContainer.append(span);
-            });
-
-            const button = document.createElement("a");
-            button.innerText = "עוד פרטים";
-            button.href = "#"
-            
-            div.append(imageContainer);
-            div.append(tagsContainer);
-            div.append(h2);
-            div.append(desc);
-            div.append(button);
-            contianer.append(div);
-        })
-
-
-
-        function toggleButtonClicked(button){
-            button.classList.toggle("selected");
+<script>
+    const content = [
+        {
+            title: "פריז, צרפת",
+            description: "חופשה עירונית קלאסית עם מוזיאונים, בתי קפה, שופינג ואווירה רומנטית לאורך הסיין.",
+            image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🗼 עירונית", "☁️ מעונן", "🎨 תרבות"],
+            price: 240
+        },
+        {
+            title: "אתונה, יוון",
+            description: "שילוב של היסטוריה, אוכל ים־תיכוני ושמש. יעד מצוין למי שמחפש חופשה נעימה וקלה לתכנון.",
+            image: "https://images.unsplash.com/photo-1555993539-1732b0258235?auto=format&fit=crop&w=1000&q=85",
+            tags: ["☀️ שמשי", "🏛️ היסטוריה", "🌊 ים"],
+            price: 180
+        },
+        {
+            title: "לונדון, בריטניה",
+            description: "עיר מלאה בתיאטרון, מוזיאונים, קניות ושווקים. מתאימה במיוחד למי שלא נרתע ממזג אוויר משתנה.",
+            image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🌧️ גשום", "🎭 עירונית", "🛍️ קניות"],
+            price: 220
+        },
+        {
+            title: "רייקיאוויק, איסלנד",
+            description: "בסיס מושלם למפלים, קרחונים, מעיינות חמים ונופים דרמטיים שלא רואים בכל מקום.",
+            image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=1000&q=85",
+            tags: ["❄️ קר", "🌿 טבע", "🧊 קרחונים"],
+            price: 390
+        },
+        {
+            title: "דובאי, איחוד האמירויות",
+            description: "מלונות מפנקים, קניות, חופים ומדבר. בחירה מעולה למי שמחפש שמש וחופשה מלאה באטרקציות.",
+            image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1000&q=85",
+            tags: ["☀️ שמשי", "🏖️ ים", "🏙️ מודרני"],
+            price: 320
+        },
+        {
+            title: "אמסטרדם, הולנד",
+            description: "תעלות, אופניים, מוזיאונים ושכונות ציוריות. יעד נוח לחופשה עירונית קצרה באווירה רגועה.",
+            image: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🚲 עירונית", "☁️ מעונן", "🛶 תעלות"],
+            price: 260
+        },
+        {
+            title: "ברצלונה, ספרד",
+            description: "חופים, אוכל, ארכיטקטורה וחיי לילה — שילוב מעולה בין חופשה עירונית לזמן רגוע ליד הים.",
+            image: "https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🌊 ים", "☀️ שמשי", "🏙️ עירונית"],
+            price: 210
+        },
+        {
+            title: "וינה, אוסטריה",
+            description: "ארמונות, בתי קפה, מוזיקה קלאסית ושווקי חורף. יעד אלגנטי שמתאים גם לעונה הקרה.",
+            image: "https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=1000&q=85",
+            tags: ["❄️ חורף", "🎻 תרבות", "🏰 עירונית"],
+            price: 230
         }
-    </script>
+    ];
+
+    const contianer = document.getElementById("content-list");
+
+    content.forEach(item => {
+        const { title, description, image, tags } = item;
+
+        const div = document.createElement("div");
+
+        const h2 = document.createElement("h2");
+        h2.innerText = title;
+
+        const imageContainer = document.createElement("div");
+        const img = document.createElement("img");
+        img.src = image;
+        imageContainer.append(img);
+        imageContainer.classList.add("image-container");
+
+        const desc = document.createElement("p");
+        desc.innerText = description;
+
+        const tagsContainer = document.createElement("div");
+        tags.forEach(tag => {
+            const span = document.createElement("span");
+            span.innerText = tag;
+            tagsContainer.append(span);
+        });
+
+        const button = document.createElement("a");
+        button.innerText = "עוד פרטים";
+        button.href = "#"
+
+        div.append(imageContainer);
+        div.append(tagsContainer);
+        div.append(h2);
+        div.append(desc);
+        div.append(button);
+        contianer.append(div);
+    })
+
+
+
+    function toggleButtonClicked(button) {
+        button.classList.toggle("selected");
+    }
+</script>
+
 </html>

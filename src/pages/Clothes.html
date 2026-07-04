@@ -1,119 +1,148 @@
 <!doctype html>
 <html dir="rtl">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="../styles/Style.css" />
-        <script src="../javascript/templateLoad.js"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Cielo</title>
-    </head>
 
-    <body>
-        <div class="base-container">
-            <h1>בגדים</h1>
-            <div class="search-component">
-                <div class="text">
-                    <h1>חיפוש חכם</h1>
-                    <p>חפשו לפי מיקום\איזור\מזג אוויר והחיפוש החכם יעשה את השאר!</p>
-                </div>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../styles/Style.css" />
+    <script src="../javascript/templateLoad.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cielo</title>
+</head>
 
-                <div class="rounded-container search-box">
-                    <h2>חפש עכשיו!</h2>
-                    <input type="text" placeholder="מיקום\איזור\מזג אוויר">
-                    <br>
-                    <button>חפש</button>
-                </div>
+<body>
+    <div class="base-container">
+        <h1>בגדים</h1>
+        <div class="search-component">
+            <div class="text">
+                <h1>חיפוש חכם</h1>
+                <p>בחרו יעד, מזג אוויר או סוג לבוש ו-Cielo תעזור לכם להתלבש נכון בלי לארוז חצי בית.</p>
             </div>
 
-            <div class="rounded-container filter-conatiner">
-                <h2>סינון</h2>
-                <div>
-                    <label for="">טמפרטורה</label>
-                    <input type="number" placeholder="-40°">-<input type="number" placeholder="40°">
-                </div>
-                <div>
-                    <label for="">תקציב</label>
-                    <input type="number" placeholder="0$">-<input type="number" placeholder="3,000$">
-                </div>
-                <div>
-                    <label for="">מזג אוויר</label>
-                    <button class="toggleable selected" onclick="toggleButtonClicked(this)">הכל</button>
-                    <button class="toggleable" onclick="toggleButtonClicked(this)">גשום</button>
-                    <button class="toggleable" onclick="toggleButtonClicked(this)">שמשי</button>
-                    <button class="toggleable" onclick="toggleButtonClicked(this)">מעונן</button>
-                </div>
-            </div>
-
-            <div id="content-list">
-                
+            <div class="rounded-container search-box">
+                <h2>מה לובשים?</h2>
+                <input type="text" placeholder="למשל: מעיל, קיץ, גשום, פריז" />
+                <button>חפש</button>
             </div>
         </div>
-    </body>
 
-    <script>
-        const content = [
-            {
-                title: "some shirt",
-                description: "very comfy",
-                image: "https://tse2.mm.bing.net/th/id/OIP.rH6y-_g16tzb99REBmIo5gHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
-                tags: ["warm", "fuzzy"]
-            },
-            {
-                title: "some ",
-                description: "not so comfy",
-                image: "https://tse1.explicit.bing.net/th/id/OIP.ixNcpQIkXCCB-K2BLXlo-wHaHa?rs=1&pid=ImgDetMain&o=7&rm=3",
-                tags: ["stinky", "no"]
-            },
-            {
-                title: "41",
-                description: "super flexible utlra material made from 100% uranium",
-                image: "https://tse1.mm.bing.net/th/id/OIP.uLQwX4HlxJYiN4I97bsBRAHaJc?rs=1&pid=ImgDetMain&o=7&rm=3",
-                tags: ["cold and shaken"]
-            },
-            {
-                title: "bob",
-                description: "לא משהו, אל תקנו אצ זה זה מסוכן",
-                image: "https://tse1.mm.bing.net/th/id/OIP.uLQwX4HlxJYiN4I97bsBRAHaJc?rs=1&pid=ImgDetMain&o=7&rm=3",
-                tags: ["A", "B", "C"]
-            }
-        ];
+        <div class="rounded-container filter-conatiner">
+            <h2>סינון</h2>
+            <div>
+                <label for="">טמפרטורה</label>
+                <input type="number" placeholder="-40°">-<input type="number" placeholder="40°">
+            </div>
+            <div>
+                <label for="">תקציב</label>
+                <input type="number" placeholder="0$">-<input type="number" placeholder="3,000$">
+            </div>
+            <div>
+                <label for="">מזג אוויר</label>
+                <button class="toggleable selected" onclick="toggleButtonClicked(this)">הכל</button>
+                <button class="toggleable" onclick="toggleButtonClicked(this)">גשום</button>
+                <button class="toggleable" onclick="toggleButtonClicked(this)">שמשי</button>
+                <button class="toggleable" onclick="toggleButtonClicked(this)">מעונן</button>
+            </div>
+        </div>
 
-        const contianer = document.getElementById("content-list");
+        <div id="content-list">
 
-        content.forEach(item => {
-            const { title, description, image, tags } = item;
+        </div>
+    </div>
+</body>
 
-            const div = document.createElement("div");
+<script>
+    const content = [
+        {
+            title: "מעיל טרנץ' עמיד למים",
+            description: "שכבה קלה ונוחה לימים גשומים. מתאימה לטיולים עירוניים ולמזג אוויר משתנה.",
+            image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🌧️ גשום", "🧥 עליונית", "🏙️ עירוני"],
+        },
+        {
+            title: "סט פשתן קליל",
+            description: "בד נושם וגזרה נוחה לימים חמים. פתרון מצוין לחופשות קיץ, טיולים וחוף הים.",
+            image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=85",
+            tags: ["☀️ שמשי", "🌿 נושם", "🏖️ קיץ"],
+        },
+        {
+            title: "סוודר סרוג רך",
+            description: "שכבה חמימה ונעימה לערבים קרירים, טיסות ומזג אוויר מעונן בעונות המעבר.",
+            image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=1000&q=85",
+            tags: ["☁️ מעונן", "🧶 חמים", "🍂 מעבר"],
+        },
+        {
+            title: "מעיל חורף מבודד",
+            description: "מעיל עבה לשמירה על חום הגוף ביעדים קרים במיוחד, בשלג וברוחות חזקות.",
+            image: "https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=85",
+            tags: ["❄️ קר", "🧥 חורף", "🏔️ שלג"],
+        },
+        {
+            title: "חולצת דרייפיט נושמת",
+            description: "חולצה קלה שמתייבשת במהירות ומתאימה להליכות, מסלולים וימים חמים עם הרבה תנועה.",
+            image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=1000&q=85",
+            tags: ["☀️ שמשי", "🥾 טיולים", "💨 נושם"],
+        },
+        {
+            title: "מגפיים עמידים לגשם",
+            description: "נעליים סגורות עם אחיזה טובה לימים רטובים, רחובות חלקים וטיולים במזג אוויר לא יציב.",
+            image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🌧️ גשום", "🥾 נעליים", "💧 עמיד למים"],
+        },
+        {
+            title: "קרדיגן קל לשכבות",
+            description: "פריט שימושי שאפשר ללבוש ולהוריד בקלות כשמזג האוויר משתנה לאורך היום.",
+            image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=1000&q=85",
+            tags: ["☁️ מעונן", "🧥 שכבות", "✈️ לטיסה"],
+        },
+        {
+            title: "כובע רחב שוליים",
+            description: "אביזר קליל להגנה מהשמש, שמתאים לחוף, לטיולים ארוכים ולימים בהירים במיוחד.",
+            image: "https://images.unsplash.com/photo-1529958030586-3aae4ca485ff?auto=format&fit=crop&w=1000&q=85",
+            tags: ["☀️ שמשי", "👒 אביזר", "🏖️ קיץ"],
+        }
+    ];
 
-            const h2 = document.createElement("h2");
-            h2.innerText = title;
+    const contianer = document.getElementById("content-list");
 
-            const imageContainer = document.createElement("div");
-            const img = document.createElement("img");
-            img.src = image;
-            imageContainer.append(img);
-            imageContainer.classList.add("image-container");
+    content.forEach(item => {
+        const { title, description, image, tags } = item;
 
-            const desc = document.createElement("p");
-            desc.innerText = description;
+        const div = document.createElement("div");
 
-            const tagsContainer = document.createElement("div");
-            tags.forEach(tag => {
-                const span = document.createElement("span");
-                span.innerText = tag;
-                tagsContainer.append(span);
-            });
+        const h2 = document.createElement("h2");
+        h2.innerText = title;
 
-            const button = document.createElement("a");
-            button.innerText = "עוד פרטים";
-            button.href = "#";
+        const imageContainer = document.createElement("div");
+        const img = document.createElement("img");
+        img.src = image;
+        imageContainer.append(img);
+        imageContainer.classList.add("image-container");
 
-            div.append(imageContainer);
-            div.append(tagsContainer);
-            div.append(h2);
-            div.append(desc);
-            div.append(button);
-            contianer.append(div);
-        })
-    </script>
+        const desc = document.createElement("p");
+        desc.innerText = description;
+
+        const tagsContainer = document.createElement("div");
+        tags.forEach(tag => {
+            const span = document.createElement("span");
+            span.innerText = tag;
+            tagsContainer.append(span);
+        });
+
+        const button = document.createElement("a");
+        button.innerText = "עוד פרטים";
+        button.href = "#";
+
+        div.append(imageContainer);
+        div.append(tagsContainer);
+        div.append(h2);
+        div.append(desc);
+        div.append(button);
+        contianer.append(div);
+    });
+
+    function toggleButtonClicked(button) {
+        button.classList.toggle("selected");
+    }
+</script>
+
 </html>

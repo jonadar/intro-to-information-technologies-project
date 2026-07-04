@@ -1,0 +1,151 @@
+<!doctype html>
+<html dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../styles/Style.css" />
+    <script src="../javascript/templateLoad.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cielo</title>
+</head>
+
+<body>
+    <div class="base-container">
+        <h1>אטרקציות</h1>
+        <div class="search-component">
+            <div class="text">
+                <h1>חיפוש חכם</h1>
+                <p>חפשו לפי יעד\איזור\מזג אוויר\סוג בילוי והחיפוש החכם יעשה את השאר!</p>
+            </div>
+
+            <div class="rounded-container search-box">
+                <h2>חפש עכשיו!</h2>
+                <input id="attractionSearch" type="text" placeholder="יעד\איזור\מזג אוויר\אטרקציה" />
+                <br />
+                <button id="searchButton" type="button">חפש</button>
+            </div>
+        </div>
+
+        <div class="rounded-container filter-conatiner">
+            <h2>סינון</h2>
+            <div>
+                <label for="">טמפרטורה</label>
+                <input type="number" placeholder="-40°">-<input type="number" placeholder="40°">
+            </div>
+            <div>
+                <label for="">תקציב</label>
+                <input type="number" placeholder="0$">-<input type="number" placeholder="3,000$">
+            </div>
+            <div>
+                <label for="">מזג אוויר</label>
+                <button class="toggleable selected" onclick="toggleButtonClicked(this)">הכל</button>
+                <button class="toggleable" onclick="toggleButtonClicked(this)">גשום</button>
+                <button class="toggleable" onclick="toggleButtonClicked(this)">שמשי</button>
+                <button class="toggleable" onclick="toggleButtonClicked(this)">מעונן</button>
+            </div>
+        </div>
+
+        <div id="content-list">
+
+        </div>
+    </div>
+</body>
+
+<script>
+    const content = [
+        {
+            title: "שיט על נהר הסיין",
+            description: "שיט רגוע מול מגדל אייפל והגשרים המפורסמים של פריז. מתאים במיוחד ליום נעים או מעונן.",
+            image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🗼 פריז", "🚤 שיט", "☁️ מעונן"],
+        },
+        {
+            title: "מוזיאון הלובר",
+            description: "אמנות, היסטוריה ואחת האטרקציות המפורסמות בעולם. בחירה מצוינת גם ליום גשום או קר.",
+            image: "https://images.unsplash.com/photo-1565099824688-e93eb20fe622?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🏛️ מוזיאון", "🎨 תרבות", "🌧️ גשום"],
+        },
+        {
+            title: "סקי באלפים",
+            description: "יום של שלג, נוף הררי ומסלולים לכל הרמות. מתאים למי שמחפש חוויה חורפית אמיתית.",
+            image: "https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🎿 סקי", "❄️ קר", "🏔️ הרים"],
+        },
+        {
+            title: "טיול למפלים וקרחונים",
+            description: "מסלול טבע עוצמתי בין מפלים, קרחונים ונופים דרמטיים. מומלץ למטיילים שאוהבים טבע פתוח.",
+            image: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🌊 מפלים", "🧊 קרחונים", "🌿 טבע"],
+        },
+        {
+            title: "ספארי ג'יפים במדבר",
+            description: "דיונות, שקיעה ורכיבת שטח. אחת החוויות הכיפיות ביותר ליום שמשי ויבש.",
+            image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🏜️ מדבר", "🚙 ג'יפים", "☀️ שמשי"],
+        },
+        {
+            title: "פארק שעשועים משפחתי",
+            description: "מתקנים, מופעים ואזורי משחק למשפחה. הכי כיף ביום בהיר או מעונן ונעים.",
+            image: "https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🎢 מתקנים", "👨‍👩‍👧 משפחה", "☀️ שמשי"],
+        },
+        {
+            title: "סיור אוכל בשוק המקומי",
+            description: "טעימות, שווקים צבעוניים וסיפורים מקומיים. מתאים גם ליום מעונן או גשום קל.",
+            image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🍴 אוכל", "🛍️ שוק", "☁️ מעונן"],
+        },
+        {
+            title: "האקווריום של ליסבון",
+            description: "אטרקציה מקורה, צבעונית ומשפחתית שמתאימה במיוחד כשהמזג בחוץ פחות נוח.",
+            image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=85",
+            tags: ["🐠 אקווריום", "👨‍👩‍👧 משפחה", "🌧️ גשום"],
+        }
+    ];
+
+    const contianer = document.getElementById("content-list");
+
+    content.forEach(item => {
+        const { title, description, image, tags } = item;
+
+        const div = document.createElement("div");
+
+        const h2 = document.createElement("h2");
+        h2.innerText = title;
+
+        const imageContainer = document.createElement("div");
+        const img = document.createElement("img");
+        img.src = image;
+        imageContainer.append(img);
+        imageContainer.classList.add("image-container");
+
+        const desc = document.createElement("p");
+        desc.innerText = description;
+
+        const tagsContainer = document.createElement("div");
+        tags.forEach(tag => {
+            const span = document.createElement("span");
+            span.innerText = tag;
+            tagsContainer.append(span);
+        });
+
+        const button = document.createElement("a");
+        button.innerText = "עוד פרטים";
+        button.href = "#"
+
+        div.append(imageContainer);
+        div.append(tagsContainer);
+        div.append(h2);
+        div.append(desc);
+        div.append(button);
+        contianer.append(div);
+    })
+
+
+
+    function toggleButtonClicked(button) {
+        button.classList.toggle("selected");
+    }
+</script>
+
+</html>
