@@ -33,6 +33,5 @@ function doNext(){
     
 }
 
-intitalizeCarousels();  
-console.log(cStates);
+intitalizeCarousels();
 setInterval(doNext, 3000);
